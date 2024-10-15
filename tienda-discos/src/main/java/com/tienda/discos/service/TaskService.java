@@ -1,24 +1,18 @@
 // service/TaskService.java
-
 package com.tienda.discos.service;
-
 import com.tienda.discos.model.Task;
 import com.tienda.discos.model.User;
 import com.tienda.discos.repository.TaskRepository;
 import com.tienda.discos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 @Service
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
-
     @Autowired
     private UserRepository userRepository;
-
     /**
      * Obtiene todas las tareas de un usuario específico.
      *
@@ -28,7 +22,6 @@ public class TaskService {
     public List<Task> getAllTasks(Long userId) {
         return taskRepository.findByUserId(userId);
     }
-
     /**
      * Crea una nueva tarea para un usuario específico.
      *
@@ -42,7 +35,6 @@ public class TaskService {
         task.setUser(user);
         return taskRepository.save(task);
     }
-
     /**
      * Actualiza una tarea existente.
      *
@@ -57,7 +49,6 @@ public class TaskService {
         existingTask.setCompleted(task.isCompleted());
         return taskRepository.save(existingTask);
     }
-
     /**
      * Elimina una tarea por su ID.
      *
@@ -66,7 +57,6 @@ public class TaskService {
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
-
     /**
      * Obtiene el ID del usuario basado en el correo electrónico.
      *

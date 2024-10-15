@@ -1,3 +1,4 @@
+
 package com.tienda.discos.config;
 
 import com.tienda.discos.filter.JwtAuthenticationFilter;
@@ -65,3 +66,4 @@ public class SecurityConfig {
         return authConfig.getAuthenticationManager();
     }
 }
+

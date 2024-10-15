@@ -1,24 +1,17 @@
-// service/AuthService
-
 package com.tienda.discos.service;
-
 import com.tienda.discos.model.User;
 import com.tienda.discos.repository.UserRepository;
 import com.tienda.discos.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 @Service
 public class AuthService {
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private JwtUtil jwtUtil;
-
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
     /**
      * Registra un nuevo usuario y devuelve un token JWT.
      *
@@ -36,7 +29,6 @@ public class AuthService {
         userRepository.save(user);
         return jwtUtil.generateToken(email);
     }
-
     /**
      * Autentica a un usuario y devuelve un token JWT.
      *

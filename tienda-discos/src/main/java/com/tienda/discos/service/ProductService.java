@@ -1,24 +1,17 @@
-// ProductService
-
 package com.tienda.discos.service;
-
 import com.tienda.discos.model.Product;
 import com.tienda.discos.model.User;
 import com.tienda.discos.repository.ProductRepository;
 import com.tienda.discos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 @Service
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
-
     @Autowired
     private UserRepository userRepository;
-
     /**
      * Obtiene todos los productos de un usuario específico.
      *
@@ -28,7 +21,6 @@ public class ProductService {
     public List<Product> getAllProducts(Long userId) {
         return productRepository.findByUserId(userId);
     }
-
     /**
      * Crea un nuevo producto para un usuario específico.
      *
@@ -42,7 +34,6 @@ public class ProductService {
         product.setUser(user);
         return productRepository.save(product);
     }
-
     /**
      * Actualiza un producto existente.
      *
@@ -59,7 +50,6 @@ public class ProductService {
         existingProduct.setDescription(product.getDescription());
         return productRepository.save(existingProduct);
     }
-
     /**
      * Elimina un producto por su ID.
      *
@@ -68,7 +58,6 @@ public class ProductService {
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
-
     /**
      * Obtiene el ID del usuario basado en el correo electrónico.
      *

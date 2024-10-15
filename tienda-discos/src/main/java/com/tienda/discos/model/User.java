@@ -1,3 +1,4 @@
+
 // model/User.java
 
 package com.tienda.discos.model;
@@ -31,4 +32,5 @@ public class User {
 
     // Otros campos como nombre, etc., si es necesario
 }
+
 

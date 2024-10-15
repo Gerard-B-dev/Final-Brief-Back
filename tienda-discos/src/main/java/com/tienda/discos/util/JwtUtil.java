@@ -1,14 +1,9 @@
-// util/JwtUtil
-
 package com.tienda.discos.util;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
-
 /**
  * Clase de utilidad para manejar JWT.
  */
@@ -16,7 +11,6 @@ import java.util.Date;
 public class JwtUtil {
     private String secret = "tu_secreto_muy_seguro"; // Cambia esto a una clave más segura y almacénala de forma segura
     private long jwtExpirationInMs = 604800000L; // 7 días
-
     /**
      * Genera un token JWT basado en el correo electrónico.
      *
@@ -31,7 +25,6 @@ public class JwtUtil {
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
-
     /**
      * Obtiene el correo electrónico del usuario a partir del token JWT.
      *
@@ -43,10 +36,8 @@ public class JwtUtil {
                 .setSigningKey(secret)
                 .parseClaimsJws(token)
                 .getBody();
-
         return claims.getSubject();
     }
-
     /**
      * Valida el token JWT.
      *
