@@ -1,4 +1,4 @@
-package com.tienda_discos;
+package com.tienda.discos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

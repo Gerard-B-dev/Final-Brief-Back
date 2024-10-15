@@ -1,4 +1,4 @@
-package com.tienda_discos;
+package com.tienda.discos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
